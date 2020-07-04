@@ -22,65 +22,41 @@
 
 
 <script>
-import videojs from "video.js";
+import VideoPlayer from "../common/video";
 
 export default {
   name: "Video",
   data() {
     return {
-      player: null,
-      options: {
-        autoplay: false,
-        poster: "",
-        sources: [
-          {
-            src: "",
-            type: "video/mp4"
-          }
-        ]
-      },
-      playing: false
+      playing: false,
+      options: {}
     };
   },
   mounted() {
     if (this.$route.params && this.$route.params.movie) {
-        this.options.poster = this.$route.params.movie.poster;
-        this.options.sources[0] = this.$route.params.movie.video;
-        this.player = videojs(
-          this.$refs.videoPlayer,
-          this.options,
-          function onPlayerReady() {
-            // Player is ready
-          }
-        );
+      VideoPlayer.setVideoPoster(this.$route.params.movie.poster);
+      VideoPlayer.setVideoSource(this.$route.params.movie.video);
     }
+    VideoPlayer.getPlayer(this.$refs.videoPlayer);
+    this.options = VideoPlayer.getOptions();
   },
   beforeDestroy() {
-    if (this.player) {
-      this.player.dispose();
-    }
+    VideoPlayer.disposePlayer();
   },
   methods: {
     play() {
-      if (this.player) {
-        this.player.play();
-        this.playing = true;
-        return true;
-      }
-      return false;
+      const response = VideoPlayer.playVideo();
+      this.playing = response;
+      return response;
     },
     pause() {
-      if (this.player) {
-        this.player.pause();
-        this.playing = false;
-        return true;
-      }
-      return false;
+      const response = VideoPlayer.pauseVideo();
+      this.playing = !response;
+      return response;
     }
   }
 };
 </script>
-
 
 <style scoped>
 .container {
