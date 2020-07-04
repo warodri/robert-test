@@ -28,8 +28,8 @@ Talking about routing. I also know that with lazy loading we take advantages of 
 Here I'm using the Carousel component (3rd party component). I know that this can be separated into another component which will only show the <img /> for each slide. I didn't do that because this is a simple example and because I guess that you want to see if I know how to Bind events back to the parent component and I think that with this you can see it. Please let me know if you still want to see how I separate even more this componentent into smaller parts. I can do that...
 
 ##### Video Player
-Here you will see that I put all the functions to manipulate the the Video Player. Some companies prefer to have all these methods in a separate file. I can do that, of course. I decided to do it this way only because of a demo app. Please, if you want me to change this and put the code for calling the Video Player functions in a separate file, I can do that. 
-
+All the functions to manipulate the Video Player are located inside common/video.js 
+This is just one way to show how the code can be divided to specific functions.
 
 
 ## Project setup
