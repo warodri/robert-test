@@ -28,7 +28,7 @@ Talking about routing. I also know that with lazy loading we take advantages of 
 Here I'm using the Carousel component (3rd party component). I know that this can be separated into another component which will only show the <img /> for each slide. I didn't do that because this is a simple example and because I guess that you want to see if I know how to Bind events back to the parent component and I think that with this you can see it. Please let me know if you still want to see how I separate even more this componentent into smaller parts. I can do that...
 
 ##### Video Player
-Here you will see that I put all the functions to manipulate the the Video Player. Some companies prefer to have all these methods in a separate file. SO I DID THAT: PLEASE CHECK THE OTHER BRANCH IN THIS REPO BECAUSE I
+Here you will see that I put all the functions to manipulate the the Video Player. Some companies prefer to have all these methods in a separate file. SO I DID THAT: PLEASE [CHECK THIS BRANCH](https://github.com/warodri/robert-test/tree/videoplayer-functions-in-separate-file) IN THIS REPO BECAUSE I
 SHOW THERE HOW TO PUT ALL THE FUNCTIONS FOR THE VIDEO PLAYER IN A SEPARATED FILE.
 
 
